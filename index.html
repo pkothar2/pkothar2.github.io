@@ -1,0 +1,91 @@
+  <!doctype html>
+  <html class="no-js" lang="en">
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Foundation | Welcome</title>
+      <link rel="stylesheet" href="css/foundation.css" />
+      <script src="js/vendor/modernizr.js"></script>
+    </head>
+    <body>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId      : '1031980033497603',
+            xfbml      : true,
+            version    : 'v2.3'
+          });
+        };
+
+        (function(d, s, id){
+           var js, fjs = d.getElementsByTagName(s)[0];
+           if (d.getElementById(id)) {return;}
+           js = d.createElement(s); js.id = id;
+           js.src = "//connect.facebook.net/en_US/sdk.js";
+           fjs.parentNode.insertBefore(js, fjs);
+         }(document, 'script', 'facebook-jssdk'));
+
+      </script>
+      
+      <div class="row">
+        <div class="large-10 columns">
+          <h2><font face = "Helvetica"> Sign up </font></h2>
+        </div>
+      </div>
+      
+              
+
+          <form>
+              <form action="mailto:parthgold@gmail.com">
+  				  <div class="row">
+  				    <div class="large-10 columns">
+  				      <label>Username</label>
+  				      <input type="text" placeholder="Enter a unique username" />
+  				    </div>
+  				  </div>
+  				  <div class="row">
+  				    <div class="large-10 columns">
+  				      <div class="row collapse">
+  				        <label>Email</label>
+  				        <div class="small-9 columns">
+  				          <input type="text" placeholder="email@xxxxx" />
+
+  				        </div>
+  				        <div class="small-3 columns">
+  				          <span class="postfix">.com</span>
+  				        </div>
+  				      </div>
+  				    </div>
+  				  </div>
+  				  <div class="row">
+  				    <div class="large-10 columns">
+  				      <label>Political leaning?</label>
+  				      <select>
+  				        <option value="Democrat">Democrat</option>
+  				        <option value="Republican">Republican</option>
+                  <option value="Other">Other</option>
+  				      </select>
+  				    </div>
+  				  </div>
+            
+  				</form>
+        </form>
+        </div>     
+        <div>
+        <div style="position: absolute; top:300px; left:860px;">
+          <a href="#" class="button secondary">Sign up</a>
+                <div class="fb-login-button" data-max-rows="2" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false">
+                    
+                </div>
+
+        </div>
+        <div>
+
+
+      <script src="js/vendor/jquery.js"></script>
+      <script src="js/foundation.min.js"></script>
+      <script>
+        $(document).foundation();
+      </script>
+    </body>
+  </html>
