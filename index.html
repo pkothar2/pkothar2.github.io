@@ -1,89 +1,54 @@
 <!doctype html>
-<html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foundation | Welcome</title>
-    <link rel="stylesheet" href="css/foundation.css" />
-    <script src="js/vendor/modernizr.js"></script>
-  </head>
-  <body>
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '1031980033497603',
-          xfbml      : true,
-          version    : 'v2.3'
-        });
-      };
+<head>
+  <meta charset="utf-8">
 
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
+  <title>THISISTHECORRECTFILE</title>
+  <meta name="description" content="My Parse App">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
+</head>
+<body>
 
-    </script>
-    
-    <div class="row">
-      <div class="large-10 columns">
-        <h2><font face = "Helvetica"> Sign up </font></h2>
-      </div>
-    </div>
-    
-            
+  
+  <form>
+  UserName: <input type="text" id="username" /> 
+  <br><br>
+  Password: <input type="password" id="password" /> 
+  <br><br>
+  Email: <input type="text" id="email" /> <br>
+</form>
+<br><br>
+<input type="button" value="Sign Up" onclick="signUp();" />
 
-        <form>
-            <form action="mailto:parthgold@gmail.com">
-				  <div class="row">
-				    <div class="large-10 columns">
-				      <label>Username</label>
-				      <input type="text" placeholder="Enter a unique username" />
-				    </div>
-				  </div>
-				  <div class="row">
-				    <div class="large-10 columns">
-				      <div class="row collapse">
-				        <label>Email</label>
-				        <div class="small-9 columns">
-				          <input type="text" placeholder="email@xxxxx" />
+  <script type="text/javascript">
+Parse.initialize("eRQ56q28XjVaSyAlFbcQNoaBfjUp9jA4olPmxmKb", "t9e5HhbInYiFf4qeT9FqoYlkzOlACzAV4SNzsjSl");
+  function signUp() {
 
-				        </div>
-				        <div class="small-3 columns">
-				          <span class="postfix">.com</span>
-				        </div>
-				      </div>
-				    </div>
-				  </div>
-				  <div class="row">
-				    <div class="large-10 columns">
-				      <label>Political leaning?</label>
-				      <select>
-				        <option value="Democrat">Democrat</option>
-				        <option value="Republican">Republican</option>
-                <option value="Other">Other</option>
-				      </select>
-				    </div>
-				  </div>
-          
-				</form>
-      </form>
-      </div>     
-      <div>
-      <div style="position: absolute; top:300px; left:860px;">
-        <a href="#" class="button secondary">Sign up</a>
-              <div class="fb-login-button" data-max-rows="2" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false"></div>
+    var name = document.getElementById("username").value;
+    var pass = document.getElementById("password").value;
+    var mail = document.getElementById("email").value;
 
-      </div>
-      <div>
+    var user = new Parse.User();
+    user.set("username", name);
+    user.set("password", pass);
+    user.set("email", mail);
+  
+  
+// other fields can be set just like with Parse.Object
 
+user.signUp(null, {
+  success: function(user) {
+    // Hooray! Let them use the app now.
+  },
+  error: function(user, error) {
+    // Show the error message somewhere and let the user try again.
+    alert("Error: " + error.code + " " + error.message);
+  }
+});
+</script>
+</body>
 
-    <script src="js/vendor/jquery.js"></script>
-    <script src="js/foundation.min.js"></script>
-    <script>
-      $(document).foundation();
-    </script>
-  </body>
 </html>
